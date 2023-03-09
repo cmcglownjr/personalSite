@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}Chris McGlown Jr | Aerospace Engineer, Drone Engineer, Software Developer{% endblock title %}
+
+{% block content %}
+    <section class="main-container" id="section-introduction">
+        <div class="greeting-wrapper">
+            <h1>Welcome!</h1>
+            <h2 class="intro-tagline">I'm <span class="name">Chris McGlown</span>, an Aerospace Engineer and
+                Software Developer who likes to build interesting projects that fly through the sky and
+                robust software to keep them afloat.</h2>
+        </div>
+    </section>
+    <section class="main-container" id="section-background">
+        <div class="section-label"><h3>Background</h3></div>
+    </section>
+    <section class="main-container" id="section-expertise">
+        <div class="section-label"><h3>Skills</h3></div>
+        <div class="skills-category">
+            <div class="skills-category-label"><h5>Languages</h5></div>
+            <ul class="skills-category-list">
+                <li class="skills-category-item">Python</li>
+                <li class="skills-category-item">C#</li>
+                <li class="skills-category-item">SQL</li>
+                <li class="skills-category-item">HTML</li>
+                <li class="skills-category-item">CSS</li>
+                <li class="skills-category-item">Matlab</li>
+                <li class="skills-category-item">Fortran</li>
+                <li class="skills-category-item">Bash</li>
+            </ul>
+        </div>
+        <div class="skills-category">
+            <div class="skills-category-label"><h5>Frameworks</h5></div>
+            <ul class="skills-category-list">
+                <li class="skills-category-item">Django</li>
+                <li class="skills-category-item">.NET</li>
+                <li class="skills-category-item">ASP.NET</li>
+                <li class="skills-category-item">AWS</li>
+                <li class="skills-category-item">Angular</li>
+            </ul>
+        </div>
+        <div class="skills-category">
+            <div class="skills-category-label"><h5>Tools</h5></div>
+            <ul class="skills-category-list">
+                <li class="skills-category-item">Git</li>
+                <li class="skills-category-item">Postman</li>
+                <li class="skills-category-item">Ansys Fluent & CFX</li>
+                <li class="skills-category-item">Metacomp MIME & CFD++</li>
+                <li class="skills-category-item">JetBrains IDE</li>
+                <li class="skills-category-item">Rhinoceros CAD</li>
+                <li class="skills-category-item">AutoCAD LT & Fusion</li>
+                <li class="skills-category-item">Solid Works</li>
+                <li class="skills-category-item">Docker</li>
+            </ul>
+        </div>
+    </section>
+    <section class="main-container" id="section-projects">
+        <div class="section-label"><h3>Projects</h3></div>
+    </section>
+    <section class="main-container" id="section-contact">
+        <div class="section-label"><h3>Contact Me</h3></div>
+    </section>
+{% endblock content %}
