@@ -1,0 +1,15 @@
+{% for exp in experience %}
+<div class="resume-item">
+    <h4>{{ exp.company }}</h4>
+    <h5>{{ exp.start|date:"F Y" }} - {% if exp.end is Null %}Present{% else %}{{ exp.end|date:"F Y" }}
+    {% endif %}</h5>
+    <p><em>{{ exp.location }} </em></p>
+    <p>
+        <ul>
+            {% for item in exp.experienceitems.all %}
+                <li>{{ item.bullet }}</li>
+            {% endfor %}
+        </ul>
+    </p>
+</div>
+{% endfor %}

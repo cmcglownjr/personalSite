@@ -30,3 +30,27 @@ class Project(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Experience(models.Model):
+    company = models.CharField(max_length=100)
+    location = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
+    start = models.DateField()
+    end = models.DateField(null=True, blank=True)
+    created = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ('-start',)
+
+    def __str__(self):
+        return self.company
+
+
+class ExperienceItem(models.Model):
+    experience = models.ForeignKey(Experience, on_delete=models.CASCADE, related_name='experienceitems')
+    bullet = models.TextField()
+    created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.bullet

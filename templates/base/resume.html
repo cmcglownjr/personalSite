@@ -1,10 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Title</title>
-    </head>
-    <body>
+{% load resume_tags %}
+{% load static %}
 
-    </body>
-</html>
+<div class="container">
+    <div class="section-title">
+        <h2>Resume</h2>
+        <p>My Experiences</p>
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-6">
+            <h3 class="resume-title">Education</h3>
+            <div class="resume-item pb-0">
+                <h4>Bachelor of Science in Aerospace Engineering</h4>
+                <h5>2005 - 2010</h5>
+                <p><em>University of Cincinnati, Cincinnati, OH, USA</em></p>
+                <p>The University of Cincinnati’s B.S. in Aerospace Engineering Degree is the country’s second oldest
+                    program of its kind. Aerospace engineering takes a deep exploration of advanced science and
+                    technology in the design and development of flight vehicles; degree study includes the analysis and
+                    design of aircraft, spacecraft, missiles, rockets, and satellites.</p>
+                <p><a href="https://ceas.uc.edu/academics/departments/aerospace-engineering-mechanics/degrees-programs/aerospace-engineering-bachelor-of-science.html">
+                    - University of Cincinnati</a> </p>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <h3 class="resume-title">Certifications</h3>
+            <div class="resume-item col-lg-auto">
+                <a href="https://www.credly.com/badges/9597c4ec-34e3-45f0-a8f0-3c4d26cc06ff/public_url">
+                    <img src="/static/img/certifications/aws-certified-cloud-practitioner.png"
+                         alt="AWS certified cloud practitioner" width="128">
+                </a>
+            </div>
+            <div class="resume-item col-lg-auto">
+                <a href="https://www.credly.com/badges/5ed96030-348a-40ea-99f6-335982af45b2/public_url">
+                    <img src="/static/img/certifications/google-data-analytics-certificate.2.png"
+                         alt="Google data analytics" width="128">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <h3 class="resume-title">Professional Experience</h3>
+        <div class="col-lg-6">
+            {% show_experience 'left' %}
+        </div>
+        <div class="col-lg-6">
+            {% show_experience 'right' %}
+        </div>
+    </div>
+</div>
