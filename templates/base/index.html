@@ -1,64 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
+{% load static %}
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+{% block title %}Chris McGlown Jr{% endblock title %}
 
-  <title>Chris McGlown Jr</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <link href="/static/img/Logo_final_Color_600.png" rel="icon">
-  <link href="/static/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="/static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="/static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="/static/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="/static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="/static/css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Personal - v4.10.0
-  * Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-</head>
-
-<body>
+{% block content %}
 
   <!-- ======= Header ======= -->
   <header id="header">
     <div class="home-header container">
 
       <h1><a href="index.html">Chris McGlown Jr.</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-{#      <a href="index.html" class="mr-auto"><img src="/static/img/Logo_final_Color_600.png" alt="" class="img-fluid"></a>#}
-      <h2>I'm a passionate <span>Aerospace Engineer and Software Developer</span> who likes to build fly
-          projects</h2>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link active" href="#header">Home</a></li>
-          <li><a class="nav-link" href="#about">About</a></li>
-          <li><a class="nav-link" href="#resume">Resume</a></li>
-{#          <li><a class="nav-link" href="#services">Services</a></li>#}
-          <li><a class="nav-link" href="#portfolio">Portfolio</a></li>
-          <li><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
+      <h2>I'm a passionate <span>Aerospace Engineer and Software Developer</span> who likes to build stellar projects</h2>
+        {% include 'base/navbar.html' %}
       <div class="social-links">
         <a href="https://gitlab.com/cmcglownjr" class="gitlab"><i class="ri-gitlab-fill"></i></a>
         <a href="http://www.linkedin.com/in/chrismcglownjr" class="linkedin"><i class="bi bi-linkedin"></i></a>
@@ -331,37 +284,21 @@
           </div>
             <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
                 <div class="swiper-wrapper">
+                    {% for testimonial in testimonials %}
                     <div class="swiper-slide">
                         <div class="testimonial-item">
-                      <p>
-                        <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                          It was a privilege to manage Chris during our time together at Conwed. Always eager to assist, with
-                          excellent analytics, a fresh perspective, and a willingness to apply himself wherever he could,
-                          Chris proved to be a valuable team asset.
-                          For whatever position he's considered, I'm certain he'll apply his talents wholeheartedly.
-                        <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                      </p>
-                      <img src="https://media.licdn.com/dms/image/C4E03AQExVuwjyjhRCA/profile-displayphoto-shrink_100_100/0/1646363375243?e=1683763200&v=beta&t=WsOlUbU-Zg8ihbbLEvR4HJuDJUUqYb5b5CsZA1dFXWE" class="testimonial-img" alt="">
-                      <h3>Jake Huskins</h3>
-                      <h4>Operations Manager, MI Windows & Door</h4>
-                    </div>
-                    </div><!-- End testimonial item -->
-                    <div class="swiper-slide">
-
-                        <div class="testimonial-item">
-
                             <p>
                                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                                It is my pleasure to strongly recommend Chris McGlown. In my years of human resource management I have
-                                seen many young professionals in many career fields come and go. Chris is one individual I have worked
-                                with who uniquely stands out...
+                                  {{ testimonial.reference_testimonial|truncatewords:75 }}
                                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                             </p>
-                            <img src="https://media.licdn.com/dms/image/C4E03AQELAoFmnEiTHw/profile-displayphoto-shrink_100_100/0/1617204240446?e=1683763200&v=beta&t=WtnbOqbNE_wnTS2lKmddgksVUOz15CsXXKSBS93HHyo" class="testimonial-img" alt="">
-                            <h3>Joel Petrie</h3>
-                            <h4>HR Professional, Culture Driver, MBA</h4>
+                            <img src="{% if testimonial.image_url is not Null %}{{ testimonial.image_url }}{% else %}
+                                {% static "img/no_photo.png" %}{% endif %}" class="testimonial-img" alt="">
+                            <h3><a href="{{ testimonial.reference_url }}">{{ testimonial.reference_name }}</a> </h3>
+                            <h4>{{ testimonial.reference_title }}</h4>
                         </div>
-                    </div><!-- End testimonial item -->
+                    </div>
+                    {% endfor %}
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
@@ -740,18 +677,4 @@
     Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
   </div>
 
-  <!-- Vendor JS Files -->
-  <script src="/static/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="/static/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="/static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="/static/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="/static/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="/static/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="/static/js/main.js"></script>
-
-</body>
-
-</html>
+{% endblock content %}
