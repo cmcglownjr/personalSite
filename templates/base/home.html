@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Chris McGlown Jr{% endblock title %}
+
+{% block content %}
+<header id="header">
+    <div class="home-header container">
+        <h1><a href="{% url 'base:home' %}">Chris McGlown Jr.</a></h1>
+        <h2>I'm a passionate <span>Aerospace Engineer and Software Developer</span> who likes to build amazing
+            projects</h2>
+        {% include 'base/navbar.html' %}
+        <div class="social-links">
+            <a href="https://gitlab.com/cmcglownjr" class="gitlab"><i class="ri-gitlab-fill"></i></a>
+            <a href="https://www.linkedin.com/in/chrismcglownjr" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        </div>
+    </div>
+</header>
+{% endblock content %}

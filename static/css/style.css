@@ -34,7 +34,7 @@ body {
 body::before {
   content: "";
   position: fixed;
-  background: var(--primaryColor) url("../img/pexels-marta-branco-1194713.jpg") top right no-repeat;
+  background: var(--primaryColor) url("../img/background.jpg") top right no-repeat;
   background-size: cover;
   left: 0;
   right: 0;
@@ -65,7 +65,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Raleway", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -92,7 +92,7 @@ h6 {
   padding: 0;
   line-height: 1;
   font-weight: 700;
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 #header h1 a,
@@ -235,7 +235,7 @@ h6 {
   align-items: center;
   justify-content: space-between;
   padding: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.7);
@@ -393,7 +393,7 @@ section .container {
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #aaaaaa;
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .section-title h2::after {
@@ -411,7 +411,7 @@ section .container {
   font-size: 36px;
   font-weight: 700;
   text-transform: uppercase;
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
   color: white;
 }
 
@@ -488,7 +488,7 @@ section .container {
 .counts .count-box p {
   padding: 0;
   margin: 0;
-  font-family: "Raleway", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
 }
 
@@ -698,7 +698,7 @@ section .container {
   font-size: 18px;
   font-weight: 600;
   text-transform: uppercase;
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
   color: var(--secondaryColor);
   margin-bottom: 10px;
 }

@@ -7,8 +7,8 @@
     <!-- ======= Header ======= -->
     <header id="header">
         <div class="home-header container">
-            <h1><a href="index.html">Chris McGlown Jr.</a></h1>
-            <h2>I'm a passionate <span>Aerospace Engineer and Software Developer</span> who likes to build stellar
+            <h1><a href="{% url 'base:home' %}">Chris McGlown Jr.</a></h1>
+            <h2>I'm a passionate <span>Aerospace Engineer and Software Developer</span> who likes to build amazing
                 projects</h2>
             {% include 'base/navbar.html' %}
             <div class="social-links">
@@ -21,27 +21,24 @@
     <section id="about" class="about">
         {% include 'base/about.html' %}
     </section><!-- End About Section -->
-  <!-- ======= Resume Section ======= -->
-  <section id="resume" class="resume">
-    {% include 'base/resume.html' %}
-  </section><!-- End Resume Section -->
+    <!-- ======= Resume Section ======= -->
+    <section id="resume" class="resume">
+        {% include 'base/resume.html' %}
+    </section><!-- End Resume Section -->
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+        {% include 'base/portfolio.html' %}
+    </section><!-- End Portfolio Section -->
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+        {% include 'base/contact.html' %}
+    </section><!-- End Contact Section -->
 
-  <!-- ======= Portfolio Section ======= -->
-  <section id="portfolio" class="portfolio">
-    {% include 'base/portfolio.html' %}
-  </section><!-- End Portfolio Section -->
-
-  <!-- ======= Contact Section ======= -->
-  <section id="contact" class="contact">
-    {% include 'base/contact.html' %}
-  </section><!-- End Contact Section -->
-
-  <div class="credits">
-    <!-- All the links in the footer should remain intact. -->
-    <!-- You can delete the links only if you purchased the pro version. -->
-    <!-- Licensing information: https://bootstrapmade.com/license/ -->
-    <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/personal-free-resume-bootstrap-template/ -->
-    Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-  </div>
-
+    <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/personal-free-resume-bootstrap-template/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    </div>
 {% endblock content %}

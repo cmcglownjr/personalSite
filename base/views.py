@@ -16,3 +16,8 @@ def home(request):
         'tags': tags,
     }
     return render(request, 'base/index.html', context)
+
+
+def about(request):
+    testimonials = Testimonial.objects.all()
+    return render(request, 'base/about.html', {'tesimonials': testimonials})
