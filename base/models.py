@@ -1,4 +1,5 @@
 from django.db import models
+from taggit.managers import TaggableManager
 
 
 class Testimonial(models.Model):
@@ -21,9 +22,10 @@ class Project(models.Model):
     description = models.TextField()
     repo = models.URLField()
     demo = models.URLField(blank=True, null=True)
-    screenshot = models.ImageField()
-    project_created = models.DateTimeField(db_index=True)
+    screenshot = models.URLField(blank=True, null=True)
+    project_created = models.DateField(db_index=True)
     created = models.DateTimeField(auto_now_add=True)
+    tags = TaggableManager()
 
     class Meta:
         ordering = ('project_created',)

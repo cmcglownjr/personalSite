@@ -1,0 +1,31 @@
+{% load static %}
+{% load base_tags %}
+<div class="row">
+    <div class="col-lg-12 d-flex justify-content-center">
+        <ul id="portfolio-flters">
+            <li data-filter="*" class="filter-active">All</li>
+            {% for tag in tag_filters %}
+                <li data-filter={{ tag.slug }}>{{ tag.name }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<div class="row portfolio-container">
+  {% for project in project_data %}
+      <div class="col-lg-4 col-md-6 portfolio-item{% for ptag in project.tags %}{{ ptag }}{% endfor %}">
+          <div class="portfolio-wrap">
+              <img src="{{ project.project.screenshot }}" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                  <h4>{{ project.project.name }}</h4>
+                  <p>{{ project.project.description|truncatewords:50 }}</p>
+                  <div class="portfolio-links">
+                      <a href="{{ project.project.screenshot }}" data-gallery="portfolioGallery"
+                         class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+                      <a href="{{ project.project.repo }}" target="_blank"><i class="bx bx-link"></i></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  {% endfor %}
+</div>
