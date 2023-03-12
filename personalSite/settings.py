@@ -32,7 +32,7 @@ SECRET_KEY = env('SECRET_KEY')
 
 ADMIN_SITE = env('ADMIN_SITE')
 
-ALLOWED_HOSTS = ['localhose', '127.0.0.1']
+ALLOWED_HOSTS = ['cmcglown.me', 'localhost', '127.0.0.1']
 
 # Application definition
 
