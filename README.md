@@ -24,7 +24,7 @@ You are free to copy and use this for any projects you have in mind as long as
 you follow the license that I have as well as BootstrapMade's.
 
 ## Screenshot
-![](static/img/personal_site_screenshot.png)
+![](screenshots/personalSite1.png)
 
 ## License
 This project falls under the GPLv3 license.
