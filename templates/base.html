@@ -19,12 +19,15 @@
         <link href="/static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
         <!-- Template Main CSS File -->
-        <link href="/static/css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
     </head>
     <body>
+{#        {% include 'base/navbar.html' %}#}
+        <div class="container">
             {% block content %}
             {% endblock content %}
+        </div>
       <!-- Vendor JS Files -->
           <script src="/static/vendor/purecounter/purecounter_vanilla.js"></script>
           <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -35,7 +38,7 @@
           <script src="/static/vendor/php-email-form/validate.js"></script>
 
           <!-- Template Main JS File -->
-          <script src="/static/js/main.js"></script>
+        <script src="{% static 'js/main.js' %}"></script>
 
     </body>
 </html>
