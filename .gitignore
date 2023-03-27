@@ -31,4 +31,7 @@ $RECYCLE.BIN/
 # PyCharm
 .idea/
 
+# Project Specific
 media/
+static/
+staticfiles
